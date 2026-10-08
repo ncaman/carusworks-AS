@@ -3,30 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>스태프 카탈로그 — carusworks AS</title>
-<meta name="description" content="레인·그룹·위험등급으로 걸러보는 AI 스태프 카탈로그. Lane1 공공·전문 23명 + Lane2 콘텐츠.">
-<meta name="theme-color" content="#1a66ff">
+<title>스태프 카탈로그 — 카루스웍스 AS</title>
+<meta name="description" content="카루스웍스 AS 스태프 카탈로그. 공공 23개 모듈, 콘텐츠 5개. 기능은 도구, 판단과 제출은 고객.">
+<meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/variable/pretendardvariable.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#fff;--bg2:#f4f6f9;--line:#e5e8ec;--ink:#1b1f24;--dim:#5b636d;--muted:#9aa2ac;--pri:#1a66ff;--pri-d:#0f4fd6;--priw:#eef3ff;--green:#1a9e5f;--amber:#d9900a;--red:#d83a3a;--shadow:0 1px 3px rgba(20,30,50,.06),0 1px 2px rgba(20,30,50,.04);--shadow-h:0 6px 20px rgba(20,30,50,.1)}
+:root{--bg:#fff;--bg2:#f6f7f9;--line:#e6e8ec;--ink:#191f28;--dim:#4e5968;--muted:#8b95a1;--pri:#191f28;--pri-d:#191f28;--priw:#f4f5f7;--green:#15803d;--amber:#8a6a22;--red:#be185d;--shadow:0 1px 3px rgba(25,31,40,.05);--shadow-h:0 8px 24px rgba(25,31,40,.08)}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,'Noto Sans KR',sans-serif;line-height:1.6;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,'Noto Sans KR',sans-serif;line-height:1.6;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;padding-top:66px;word-break:keep-all;overflow-wrap:break-word}
 a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-.draft{background:#fff8e1;color:#8a6d00;font-size:11px;font-weight:700;text-align:center;padding:5px;border-bottom:1px solid #f0e4b8}
-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;gap:16px;height:58px}
-nav .brand{font-weight:800;font-size:17px}nav .brand b{color:var(--pri)}
-nav .hold{font-size:12px;font-weight:800;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
-nav .lk{display:flex;gap:18px;margin-left:auto;font-size:14.5px;font-weight:600}nav .lk a{color:var(--dim)}nav .lk a:hover{color:var(--pri)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:66px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:16px;height:66px}
+nav .brand{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:13px;letter-spacing:.14em;color:#8a6a22}
+nav .brand small{margin-left:8px;color:var(--dim);letter-spacing:.16em;font-size:10px}
+nav .lk{display:flex;gap:18px;margin-left:auto;font-size:14.5px;font-weight:650;align-items:center}
+nav .lk a{color:var(--dim)}nav .lk a:hover{color:var(--ink)}
+.burger{display:none;margin-left:8px;width:42px;height:42px;border:1px solid var(--line);border-radius:999px;background:#fff;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.burger span{display:block;width:16px;height:1.5px;background:#191f28}
+@media(max-width:760px){
+  .burger{display:flex}
+  nav .lk{display:none;position:absolute;top:66px;left:0;right:0;margin:0;flex-direction:column;align-items:stretch;background:#fff;padding:12px 16px 18px;border-bottom:1px solid var(--line);min-height:calc(100dvh - 66px)}
+  nav .lk.open{display:flex}
+  nav .lk a{padding:12px 4px;font-size:16px}
+}
 .hero{padding:40px 0 20px}
 .hero .eyebrow{font-size:12px;font-weight:800;color:var(--pri)}
 .hero h1{font-size:clamp(24px,5.5vw,36px);font-weight:800;letter-spacing:-.03em;margin:8px 0 10px;line-height:1.2}
 .hero h1 .g{color:var(--pri)}
 .hero p{color:var(--dim);max-width:720px;font-size:15px}
 /* FILTER BAR */
-.filterbar{position:sticky;top:58px;z-index:90;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 0}
+.filterbar{position:sticky;top:66px;z-index:90;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 0}
 .frow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
 .frow:last-child{margin-bottom:0}
 .flabel{font-size:12px;font-weight:800;color:var(--muted);min-width:52px}
@@ -54,18 +63,21 @@ nav .lk{display:flex;gap:18px;margin-left:auto;font-size:14.5px;font-weight:600}
 .staff .portal{font-size:12px;color:var(--muted);margin-top:3px;font-weight:600}
 .staff .func{font-size:13px;color:var(--dim);margin-top:10px;line-height:1.55}
 .empty{text-align:center;color:var(--muted);padding:50px 0;font-size:15px}
-.notice{background:var(--priw);border:1px solid #d6e0f5;border-radius:12px;padding:16px 18px;margin:8px 0 40px;font-size:14px;color:#28457f;line-height:1.7}
-.notice b{color:#163a7a}
+.notice{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:8px 0 40px;font-size:14px;color:var(--dim);line-height:1.7}
+.notice b{color:var(--ink)}
 footer{border-top:1px solid var(--line);background:var(--bg2);padding:34px 0 48px;font-size:13px;color:var(--muted)}
 footer a{color:var(--pri);font-weight:600}
 </style>
 </head>
 <body>
-<div class="draft">SCAFFOLD · 인터랙티브 카탈로그 (내부검토)</div>
 <nav><div class="wrap">
-  <a class="brand" href="index.html">carus<b>works</b> AS</a>
-  <a class="hold" href="https://carusworks.com/">지주</a>
-  <div class="lk"><a href="index.html">홈</a><a href="index.html#how">이용 방법</a></div>
+  <a class="brand" href="https://carusworks.com/">carusworks <small>AS</small></a>
+  <div class="lk" id="sitenav">
+    <a href="https://carusworks.com/">지주</a>
+    <a href="index.html">홈</a>
+    <a href="https://ncaman.github.io/carusworks-SMOS/">SMOS</a>
+  </div>
+  <button class="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="sitenav"><span></span><span></span><span></span></button>
 </div></nav>
 
 <section class="hero"><div class="wrap">
@@ -79,7 +91,7 @@ footer a{color:var(--pri);font-weight:600}
   <div class="frow"><span class="flabel">레인</span><div id="laneF" class="chips"></div></div>
   <div class="frow"><span class="flabel">그룹</span><div id="groupF" class="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div></div>
   <div class="frow"><span class="flabel">위험</span><div id="riskF" class="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
-    <input class="search" id="search" placeholder="🔍 스태프 검색 (예: 전자소송, 복지)">
+    <input class="search" id="search" placeholder="스태프 검색. 예: 전자소송, 복지">
   </div>
 </div></div>
 
@@ -90,11 +102,21 @@ footer a{color:var(--pri);font-weight:600}
 </div>
 
 <footer><div class="wrap">
-  <div style="font-weight:800;color:var(--ink)">carus<b style="color:var(--pri)">works</b> AS</div>
-  <div style="margin-top:6px">Lane1 공공·전문 23명 + Lane2 콘텐츠 · 각 스태프 = 기능 모듈 1개 · <a href="index.html">← 홈으로</a></div>
-  <div style="margin-top:6px"><a href="https://carusworks.com/" style="color:var(--pri);font-weight:700">carusworks 지주회사</a></div>
-  <div style="margin-top:6px;color:var(--muted)">※ 내부 검토용 구조 스캐폴드 · 2026</div>
+  <div style="font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:.14em;color:#8a6a22">carusworks AS</div>
+  <div style="margin-top:6px">공공 23개 모듈, 콘텐츠 5개. 각 스태프는 기능 모듈 하나입니다. <a href="index.html">홈</a></div>
+  <div style="margin-top:6px"><a href="https://carusworks.com/">카루스웍스 지주</a> · <a href="https://ncaman.github.io/carusworks-SMOS/">카루스웍스 SMOS</a> · <a href="mailto:contact@carusworks.com">contact@carusworks.com</a></div>
 </div></footer>
+<script>
+(function(){
+  var b=document.querySelector(".burger"), n=document.getElementById("sitenav");
+  b.addEventListener("click",function(){
+    var open=n.classList.toggle("open");
+    b.setAttribute("aria-expanded",open?"true":"false");
+    b.setAttribute("aria-label",open?"메뉴 닫기":"메뉴 열기");
+  });
+  n.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("open");b.setAttribute("aria-expanded","false");});});
+})();
+</script>
 
 <script>
 // ── 카테고리 구조 = 데이터 ──
@@ -138,7 +160,7 @@ var STAFF=[
  ["SNS·마케팅 스태프","콘텐츠·미디어","distributor·naver","마케팅 콘텐츠·멀티플랫폼 발행","mid"],
  ["디자인·웹툰 스태프","콘텐츠·미디어","tablet_webtoon","썸네일·웹툰·이미지 자동생성","safe"]
 ];
-var RISK={safe:"🟢 안전",mid:"🟡 경계",high:"🔴 고위험"};
+var RISK={safe:"안전",mid:"경계",high:"고위험"};
 var state={lane:"all",group:"all",risk:"all",q:""};
 
 function chip(txt,val,key,cls){var b=document.createElement("button");b.className="chip "+(cls||"")+(state[key]===val?" on":"");b.textContent=txt;b.onclick=function(){state[key]=val;sync();render();};b.dataset.k=key;b.dataset.v=val;return b;}
@@ -162,7 +184,7 @@ function match(s){
 function render(){
  var grid=document.getElementById("grid");grid.innerHTML="";
  var list=STAFF.filter(match);
- document.getElementById("count").innerHTML="총 <b>"+list.length+"</b>명 표시";
+ document.getElementById("count").innerHTML="총 <b>"+list.length+"</b>개 모듈";
  if(!list.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1">조건에 맞는 스태프가 없어요.</div>';return;}
  list.forEach(function(s){var g=GROUPS[s[1]];
   var el=document.createElement("div");el.className="staff";el.style.setProperty("--c",g.c);el.style.setProperty("--cw",g.cw);
