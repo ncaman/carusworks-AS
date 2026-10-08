@@ -2,138 +2,175 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
-<title>스태프 스토어 — carusworks Agentic Staff Store</title>
-<meta name="description" content="Lane1 공공·전문 스태프 23명 + Lane2 콘텐츠 스태프. 각 스태프 = MCP 1개.">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>스태프 카탈로그 — carusworks AS</title>
+<meta name="description" content="레인·그룹·위험등급으로 걸러보는 AI 스태프 카탈로그. Lane1 공공·전문 23명 + Lane2 콘텐츠.">
+<meta name="theme-color" content="#1a66ff">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/variable/pretendardvariable.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#06070c;--bg2:#0a0c14;--panel:rgba(255,255,255,.045);--glass:rgba(255,255,255,.06);--line:rgba(255,255,255,.1);--ink:#f2f3f7;--dim:rgba(242,243,247,.62);--muted:rgba(242,243,247,.4);--gold:#f4bf3f;--cyan:#22d3ee;--purple:#a855f7;--green:#34d399;--blue:#60a5fa;--rose:#f472b6;--grad:linear-gradient(120deg,#22d3ee,#6366f1 42%,#a855f7 72%,#f472b6)}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,'Inter','Noto Sans KR',sans-serif;line-height:1.7;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
-body::before{content:'';position:fixed;inset:-20%;z-index:0;pointer-events:none;filter:blur(30px);background:radial-gradient(40% 32% at 85% 10%,rgba(99,102,241,.14),transparent 60%),radial-gradient(38% 30% at 10% 80%,rgba(34,211,238,.1),transparent 60%)}
-.wrap{max-width:1140px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+:root{--bg:#fff;--bg2:#f4f6f9;--line:#e5e8ec;--ink:#1b1f24;--dim:#5b636d;--muted:#9aa2ac;--pri:#1a66ff;--pri-d:#0f4fd6;--priw:#eef3ff;--green:#1a9e5f;--amber:#d9900a;--red:#d83a3a;--shadow:0 1px 3px rgba(20,30,50,.06),0 1px 2px rgba(20,30,50,.04);--shadow-h:0 6px 20px rgba(20,30,50,.1)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,'Noto Sans KR',sans-serif;line-height:1.6;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.eyebrow{font-family:'JetBrains Mono';font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
-.draft{position:fixed;top:0;left:0;z-index:200;background:var(--gold);color:#1a1205;font-size:10.5px;font-weight:800;padding:4px 12px;letter-spacing:.08em;border-bottom-right-radius:8px}
-nav{position:sticky;top:0;z-index:100;background:rgba(6,7,12,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;gap:22px;height:62px}
-nav .brand{font-family:'JetBrains Mono';font-weight:700;letter-spacing:.1em;font-size:14px}
-nav .brand b{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-nav .lk{display:flex;gap:18px;margin-left:auto;font-size:13.5px;font-weight:600}nav .lk a{color:var(--dim)}nav .lk a:hover{color:#fff}
-.phero{padding:60px 0 24px}
-.phero h1{font-size:clamp(28px,5vw,48px);font-weight:800;letter-spacing:-.035em;line-height:1.1;margin-bottom:14px}
-.phero h1 em{font-family:'Playfair Display';font-style:italic;font-weight:400;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.phero .lead{color:var(--dim);max-width:800px;font-size:16px}
-.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;font-family:'JetBrains Mono';font-size:12px;color:var(--dim)}
-.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
-.g{background:var(--green)}.a{background:var(--gold)}.r{background:var(--rose)}
-.sec{padding:34px 0}
-.sec h2{font-size:22px;font-weight:800;margin-bottom:6px;letter-spacing:-.02em}
-.sec h2 .grp{font-family:'JetBrains Mono';font-size:12px;color:var(--cyan);margin-left:8px}
-.sec .sub{color:var(--muted);font-size:13.5px;margin-bottom:16px}
-table{width:100%;border-collapse:collapse;font-size:14px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel);backdrop-filter:blur(12px)}
-th,td{padding:12px 15px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-thead th{background:rgba(255,255,255,.03);font-family:'JetBrains Mono';font-size:11px;letter-spacing:.04em;color:#fff}
-td:first-child{font-weight:800;white-space:nowrap}
-td:nth-child(2){font-family:'JetBrains Mono';font-size:12px;color:var(--cyan);white-space:nowrap}
-td:nth-child(3){color:var(--dim);font-size:13.5px}
-td:last-child{text-align:center;white-space:nowrap}
-tr:last-child td{border-bottom:none}
-.panel{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:22px;margin:16px 0;backdrop-filter:blur(16px)}
-.panel.gold{border-color:rgba(244,191,63,.35);background:linear-gradient(135deg,rgba(244,191,63,.1),rgba(168,85,247,.07))}
-.lede{font-size:15.5px;color:var(--ink)}
-footer{border-top:1px solid var(--line);background:var(--bg2);padding:40px 0 56px;font-size:12.5px;color:var(--muted);margin-top:30px}
-footer a{color:var(--gold)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.draft{background:#fff8e1;color:#8a6d00;font-size:11px;font-weight:700;text-align:center;padding:5px;border-bottom:1px solid #f0e4b8}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:16px;height:58px}
+nav .brand{font-weight:800;font-size:17px}nav .brand b{color:var(--pri)}
+nav .lk{display:flex;gap:18px;margin-left:auto;font-size:14.5px;font-weight:600}nav .lk a{color:var(--dim)}nav .lk a:hover{color:var(--pri)}
+.hero{padding:40px 0 20px}
+.hero .eyebrow{font-size:12px;font-weight:800;color:var(--pri)}
+.hero h1{font-size:clamp(24px,5.5vw,36px);font-weight:800;letter-spacing:-.03em;margin:8px 0 10px;line-height:1.2}
+.hero h1 .g{color:var(--pri)}
+.hero p{color:var(--dim);max-width:720px;font-size:15px}
+/* FILTER BAR */
+.filterbar{position:sticky;top:58px;z-index:90;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 0}
+.frow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.frow:last-child{margin-bottom:0}
+.flabel{font-size:12px;font-weight:800;color:var(--muted);min-width:52px}
+.chip{border:1px solid var(--line);background:#fff;color:var(--dim);font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:.15s;white-space:nowrap}
+.chip:hover{border-color:#c5d4f5}
+.chip.on{background:var(--pri);border-color:var(--pri);color:#fff}
+.chip.risk-safe.on{background:var(--green);border-color:var(--green)}
+.chip.risk-mid.on{background:var(--amber);border-color:var(--amber)}
+.chip.risk-high.on{background:var(--red);border-color:var(--red)}
+.search{flex:1;min-width:140px;border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14px;font-family:inherit;outline:none}
+.search:focus{border-color:var(--pri)}
+.count{padding:16px 0 4px;font-size:13.5px;color:var(--dim)}
+.count b{color:var(--pri)}
+/* STAFF GRID */
+.staffgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:12px 0 40px}
+@media(max-width:900px){.staffgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.staffgrid{grid-template-columns:1fr}}
+.staff{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);transition:.18s;position:relative;border-left:4px solid var(--c,var(--pri))}
+.staff:hover{transform:translateY(-3px);box-shadow:var(--shadow-h)}
+.staff .top{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.staff .grp{font-size:11px;font-weight:800;color:var(--c,var(--pri));background:var(--cw,var(--priw));padding:3px 9px;border-radius:6px}
+.staff .rb{margin-left:auto;font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px}
+.rb.safe{background:#e7f6ee;color:var(--green)}.rb.mid{background:#fcf3e0;color:var(--amber)}.rb.high{background:#fbe9e9;color:var(--red)}
+.staff h3{font-size:16px;font-weight:800;letter-spacing:-.02em}
+.staff .portal{font-size:12px;color:var(--muted);margin-top:3px;font-weight:600}
+.staff .func{font-size:13px;color:var(--dim);margin-top:10px;line-height:1.55}
+.empty{text-align:center;color:var(--muted);padding:50px 0;font-size:15px}
+.notice{background:var(--priw);border:1px solid #d6e0f5;border-radius:12px;padding:16px 18px;margin:8px 0 40px;font-size:14px;color:#28457f;line-height:1.7}
+.notice b{color:#163a7a}
+footer{border-top:1px solid var(--line);background:var(--bg2);padding:34px 0 48px;font-size:13px;color:var(--muted)}
+footer a{color:var(--pri);font-weight:600}
 </style>
 </head>
 <body>
-<div class="draft">SCAFFOLD · 카탈로그 구조 (내부검토)</div>
+<div class="draft">SCAFFOLD · 인터랙티브 카탈로그 (내부검토)</div>
 <nav><div class="wrap">
-  <a class="brand" href="index.html">carus<b>works</b> · Staff Store</a>
-  <div class="lk"><a href="index.html">홈</a><a href="#lane1">Lane 1</a><a href="#lane2">Lane 2</a></div>
+  <a class="brand" href="index.html">carus<b>works</b> AS</a>
+  <div class="lk"><a href="index.html">홈</a><a href="index.html#how">이용 방법</a></div>
 </div></nav>
 
-<section class="phero"><div class="wrap">
-  <span class="eyebrow">카탈로그</span>
-  <h1>고용 가능한 <em>스태프</em> 전체</h1>
-  <p class="lead">각 스태프 = MCP 1개. 등급(주니어·시니어·전문가)별로 모델·가격이 다릅니다. <b>기능은 우리, 자문·최종제출은 본인.</b></p>
-  <div class="legend"><span><span class="dot g"></span>안전(즉시)</span><span><span class="dot a"></span>경계(기능/자문 분리)</span><span><span class="dot r"></span>고위험(전문가 검수 후)</span></div>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">스태프 카탈로그</span>
+  <h1>필터로 골라보는 <span class="g">AI 스태프</span></h1>
+  <p>레인 · 그룹 · 위험등급으로 걸러보세요. 각 스태프 = 기능 모듈 1개. <b>기능은 우리, 자문·최종제출은 본인.</b></p>
 </div></section>
 
-<!-- LANE 1 -->
-<section class="sec" id="lane1"><div class="wrap">
-  <span class="eyebrow" style="color:var(--cyan)">Lane 1 · 공공·전문 실무 (23명)</span>
+<!-- FILTER BAR -->
+<div class="filterbar"><div class="wrap">
+  <div class="frow"><span class="flabel">레인</span><div id="laneF" class="chips"></div></div>
+  <div class="frow"><span class="flabel">그룹</span><div id="groupF" class="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div></div>
+  <div class="frow"><span class="flabel">위험</span><div id="riskF" class="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+    <input class="search" id="search" placeholder="🔍 스태프 검색 (예: 전자소송, 복지)">
+  </div>
+</div></div>
 
-  <h2 style="margin-top:22px">A. 법무·사법<span class="grp">법원 포털</span></h2>
-  <table><thead><tr><th>스태프</th><th>포털</th><th>기능 범위</th><th>위험</th></tr></thead><tbody>
-    <tr><td>전자소송 스태프</td><td>ecfs</td><td>소장·준비서면·보정서 기입/첨부/제출준비·진행조회</td><td><span class="dot r"></span></td></tr>
-    <tr><td>등기 스태프</td><td>인터넷등기소</td><td>부동산/법인 등기신청 기입보조·등기부 발급</td><td><span class="dot r"></span></td></tr>
-    <tr><td>지급명령 스태프</td><td>전자독촉</td><td>소액채권 지급명령 신청 기입보조</td><td><span class="dot a"></span></td></tr>
-    <tr><td>가족관계 스태프</td><td>efamily</td><td>출생·혼인·사망 신고 기입보조</td><td><span class="dot a"></span></td></tr>
-    <tr><td>전자공탁 스태프</td><td>전자공탁</td><td>공탁 신청 기입보조</td><td><span class="dot a"></span></td></tr>
-  </tbody></table>
-
-  <h2 style="margin-top:28px">B. 세무<span class="grp">국세·지방세</span></h2>
-  <table><thead><tr><th>스태프</th><th>포털</th><th>기능 범위</th><th>위험</th></tr></thead><tbody>
-    <tr><td>국세신고 스태프</td><td>홈택스</td><td>종소세·부가세·원천세 신고 기입·계산서</td><td><span class="dot r"></span></td></tr>
-    <tr><td>지방세 스태프</td><td>위택스</td><td>취득·재산·자동차세 신고·납부</td><td><span class="dot a"></span></td></tr>
-    <tr><td>사업자등록 스태프</td><td>홈택스</td><td>사업자등록/정정 신청 기입보조</td><td><span class="dot a"></span></td></tr>
-  </tbody></table>
-
-  <h2 style="margin-top:28px">C. 행정·민원<span class="grp">정부24·행안부</span></h2>
-  <table><thead><tr><th>스태프</th><th>포털</th><th>기능 범위</th><th>위험</th></tr></thead><tbody>
-    <tr><td>민원서류 스태프</td><td>정부24</td><td>주민등록·가족관계·각종 증명서 발급</td><td><span class="dot g"></span></td></tr>
-    <tr><td>전입신고 스태프</td><td>정부24</td><td>전입·확정일자</td><td><span class="dot g"></span></td></tr>
-    <tr><td>자동차민원 스태프</td><td>ecar</td><td>등록·이전·말소 기입보조</td><td><span class="dot a"></span></td></tr>
-    <tr><td>4대보험 스태프</td><td>4대보험 EDI</td><td>국민연금/건강/고용/산재 취득·상실</td><td><span class="dot a"></span></td></tr>
-  </tbody></table>
-
-  <h2 style="margin-top:28px">D. 복지·실버<span class="grp">★ 안전·고수요</span></h2>
-  <table><thead><tr><th>스태프</th><th>포털</th><th>기능 범위</th><th>위험</th></tr></thead><tbody>
-    <tr><td>복지급여 스태프</td><td>복지로</td><td>조건맞는 복지 조회 + 신청보조</td><td><span class="dot g"></span></td></tr>
-    <tr><td>국민연금 스태프</td><td>국민연금공단</td><td>수급·조회·환급 안내</td><td><span class="dot g"></span></td></tr>
-    <tr><td>건강보험 스태프</td><td>건강보험공단</td><td>자격·환급·건강검진 예약</td><td><span class="dot g"></span></td></tr>
-    <tr><td>실버 통합 스태프</td><td>통합</td><td>노인 대상 복지·연금·건강 종합 안내</td><td><span class="dot g"></span></td></tr>
-  </tbody></table>
-
-  <h2 style="margin-top:28px">E. 기업·조달·지원 (B2G)<span class="grp">★ 형 네트워크</span></h2>
-  <table><thead><tr><th>스태프</th><th>포털</th><th>기능 범위</th><th>위험</th></tr></thead><tbody>
-    <tr><td>조달 스태프</td><td>나라장터</td><td>입찰·조달 등록·공고 모니터링</td><td><span class="dot g"></span></td></tr>
-    <tr><td>정부지원사업 스태프</td><td>기업마당·aiinfrahub</td><td>지원사업 조회·신청보조(GPU사업 포함)</td><td><span class="dot g"></span></td></tr>
-    <tr><td>정책자금 스태프</td><td>소진공</td><td>소상공인 정책자금·지원금 신청보조</td><td><span class="dot g"></span></td></tr>
-    <tr><td>공시 스태프</td><td>DART</td><td>전자공시 작성·제출보조</td><td><span class="dot a"></span></td></tr>
-  </tbody></table>
-
-  <h2 style="margin-top:28px">F. 지식재산 · G. 민원제기</h2>
-  <table><thead><tr><th>스태프</th><th>포털</th><th>기능 범위</th><th>위험</th></tr></thead><tbody>
-    <tr><td>상표·특허 스태프</td><td>특허로·KIPRIS</td><td>출원 기입보조·선행조사 검색</td><td><span class="dot r"></span></td></tr>
-    <tr><td>국민신문고 스태프</td><td>국민신문고</td><td>민원 제기·답변 추적</td><td><span class="dot g"></span></td></tr>
-    <tr><td>정보공개 스태프</td><td>정보공개포털</td><td>정보공개 청구·수령</td><td><span class="dot g"></span></td></tr>
-  </tbody></table>
-</div></section>
-
-<!-- LANE 2 -->
-<section class="sec" id="lane2" style="border-top:1px solid var(--line);margin-top:20px;padding-top:40px"><div class="wrap">
-  <span class="eyebrow" style="color:var(--rose)">Lane 2 · 콘텐츠·미디어 (박씨 강점 영역)</span>
-  <h2 style="margin-top:22px">예정 카탈로그</h2>
-  <p class="sub">방송국·23 MCP 자산 기반. 전자정부 Lane1과 달리 법적 리스크 낮음 — MVP 우선 후보.</p>
-  <table><thead><tr><th>스태프</th><th>기반</th><th>기능 범위</th><th>위험</th></tr></thead><tbody>
-    <tr><td>영상·유튜브 스태프</td><td>po-tutorial·whitepaper2video</td><td>영상 자동제작·썸네일·업로드</td><td><span class="dot g"></span></td></tr>
-    <tr><td>출판·백서 스태프</td><td>eae-univ·eae-writer</td><td>지식 → 책·백서·웹(교수·전문가)</td><td><span class="dot g"></span></td></tr>
-    <tr><td>방송·낭송 스태프</td><td>RVC·낭송극</td><td>본인 목소리 오디오·낭송 영상</td><td><span class="dot g"></span></td></tr>
-    <tr><td>SNS·마케팅 스태프</td><td>distributor·naver_automation</td><td>마케팅 콘텐츠·멀티플랫폼 발행</td><td><span class="dot a"></span></td></tr>
-    <tr><td>디자인·웹툰 스태프</td><td>tablet_webtoon·image</td><td>썸네일·웹툰·이미지 자동생성</td><td><span class="dot g"></span></td></tr>
-  </tbody></table>
-
-  <div class="panel gold"><p class="lede" style="margin:0"><b>안심 설계:</b> 모든 Lane1 스태프는 <b>기능 자동화</b>만 수행하며 법률·세무 자문이 아닙니다. 판단·내용은 본인(또는 본인 LLM), 최종 제출·인증은 본인 공동인증서로. 🔴 고위험 직군은 전문가(변호사·세무사·변리사) 검수 후 제공됩니다.</p></div>
-</div></section>
+<div class="wrap">
+  <div class="count" id="count"></div>
+  <div class="staffgrid" id="grid"></div>
+  <div class="notice"><b>본 서비스는 기능 자동화 도구이며 법률·세무 자문이 아닙니다.</b> 판단·책임은 사용자에게 있으며, 🔴 고위험 직군(전자소송·등기·세무·특허)은 전문가(변호사·세무사·변리사) 검수를 거쳐 제공됩니다.</div>
+</div>
 
 <footer><div class="wrap">
-  <div style="font-family:'JetBrains Mono';font-weight:700;letter-spacing:.1em;color:var(--gold);margin-bottom:8px">carusworks · Agentic Staff Store</div>
-  <div>Lane1 공공·전문 23명 + Lane2 콘텐츠. 각 스태프 = MCP 1개. · <a href="index.html">← 홈으로</a></div>
-  <div style="margin-top:8px;color:var(--muted)">※ 내부 검토용 구조 스캐폴드 · 2026-10</div>
+  <div style="font-weight:800;color:var(--ink)">carus<b style="color:var(--pri)">works</b> AS</div>
+  <div style="margin-top:6px">Lane1 공공·전문 23명 + Lane2 콘텐츠 · 각 스태프 = 기능 모듈 1개 · <a href="index.html">← 홈으로</a></div>
+  <div style="margin-top:6px;color:var(--muted)">※ 내부 검토용 구조 스캐폴드 · 2026</div>
 </div></footer>
+
+<script>
+// ── 카테고리 구조 = 데이터 ──
+var GROUPS={ // 그룹: {레인, 색상}
+ "법무·사법":{lane:1,c:"#7c3aed",cw:"#f1ecfe"},
+ "세무":{lane:1,c:"#0f766e",cw:"#e4f4f2"},
+ "행정·민원":{lane:1,c:"#1a66ff",cw:"#eef3ff"},
+ "복지·실버":{lane:1,c:"#1a9e5f",cw:"#e7f6ee"},
+ "기업·조달(B2G)":{lane:1,c:"#c2410c",cw:"#fdece1"},
+ "지식재산":{lane:1,c:"#9333ea",cw:"#f4ebfd"},
+ "민원제기":{lane:1,c:"#0891b2",cw:"#e3f5fa"},
+ "콘텐츠·미디어":{lane:2,c:"#db2777",cw:"#fcebf3"}
+};
+var STAFF=[
+ ["전자소송 스태프","법무·사법","ecfs","소장·준비서면·보정서 기입/첨부/제출준비·진행조회","high"],
+ ["등기 스태프","법무·사법","인터넷등기소","부동산/법인 등기신청 기입보조·등기부 발급","high"],
+ ["지급명령 스태프","법무·사법","전자독촉","소액채권 지급명령 신청 기입보조","mid"],
+ ["가족관계 스태프","법무·사법","efamily","출생·혼인·사망 신고 기입보조","mid"],
+ ["전자공탁 스태프","법무·사법","전자공탁","공탁 신청 기입보조","mid"],
+ ["국세신고 스태프","세무","홈택스","종소세·부가세·원천세 신고 기입·계산서","high"],
+ ["지방세 스태프","세무","위택스","취득·재산·자동차세 신고·납부","mid"],
+ ["사업자등록 스태프","세무","홈택스","사업자등록/정정 신청 기입보조","mid"],
+ ["민원서류 스태프","행정·민원","정부24","주민등록·가족관계·각종 증명서 발급","safe"],
+ ["전입신고 스태프","행정·민원","정부24","전입·확정일자","safe"],
+ ["자동차민원 스태프","행정·민원","ecar","등록·이전·말소 기입보조","mid"],
+ ["4대보험 스태프","행정·민원","4대보험 EDI","국민연금/건강/고용/산재 취득·상실","mid"],
+ ["복지급여 스태프","복지·실버","복지로","조건맞는 복지 조회 + 신청보조","safe"],
+ ["국민연금 스태프","복지·실버","국민연금공단","수급·조회·환급 안내","safe"],
+ ["건강보험 스태프","복지·실버","건강보험공단","자격·환급·건강검진 예약","safe"],
+ ["실버 통합 스태프","복지·실버","통합","노인 대상 복지·연금·건강 종합 안내","safe"],
+ ["조달 스태프","기업·조달(B2G)","나라장터","입찰·조달 등록·공고 모니터링","safe"],
+ ["정부지원사업 스태프","기업·조달(B2G)","기업마당·aiinfrahub","지원사업 조회·신청보조(GPU사업 포함)","safe"],
+ ["정책자금 스태프","기업·조달(B2G)","소진공","소상공인 정책자금·지원금 신청보조","safe"],
+ ["공시 스태프","기업·조달(B2G)","DART","전자공시 작성·제출보조","mid"],
+ ["상표·특허 스태프","지식재산","특허로·KIPRIS","출원 기입보조·선행조사 검색","high"],
+ ["국민신문고 스태프","민원제기","국민신문고","민원 제기·답변 추적","safe"],
+ ["정보공개 스태프","민원제기","정보공개포털","정보공개 청구·수령","safe"],
+ ["영상·유튜브 스태프","콘텐츠·미디어","po-tutorial·w2v","영상 자동제작·썸네일·업로드","safe"],
+ ["출판·백서 스태프","콘텐츠·미디어","eae-univ·writer","지식 → 책·백서·웹(교수·전문가)","safe"],
+ ["방송·낭송 스태프","콘텐츠·미디어","RVC·낭송극","본인 목소리 오디오·낭송 영상","safe"],
+ ["SNS·마케팅 스태프","콘텐츠·미디어","distributor·naver","마케팅 콘텐츠·멀티플랫폼 발행","mid"],
+ ["디자인·웹툰 스태프","콘텐츠·미디어","tablet_webtoon","썸네일·웹툰·이미지 자동생성","safe"]
+];
+var RISK={safe:"🟢 안전",mid:"🟡 경계",high:"🔴 고위험"};
+var state={lane:"all",group:"all",risk:"all",q:""};
+
+function chip(txt,val,key,cls){var b=document.createElement("button");b.className="chip "+(cls||"")+(state[key]===val?" on":"");b.textContent=txt;b.onclick=function(){state[key]=val;sync();render();};b.dataset.k=key;b.dataset.v=val;return b;}
+function buildFilters(){
+ var lf=document.getElementById("laneF");lf.style.display="flex";lf.style.gap="8px";lf.style.flexWrap="wrap";
+ lf.append(chip("전체","all","lane"),chip("Lane 1 · 공공·전문","1","lane"),chip("Lane 2 · 콘텐츠","2","lane"));
+ var gf=document.getElementById("groupF");gf.append(chip("전체","all","group"));
+ Object.keys(GROUPS).forEach(function(g){gf.append(chip(g,g,"group"));});
+ var rf=document.getElementById("riskF");
+ rf.append(chip("전체","all","risk"),chip("안전","safe","risk","risk-safe"),chip("경계","mid","risk","risk-mid"),chip("고위험","high","risk","risk-high"));
+}
+function sync(){document.querySelectorAll(".chip").forEach(function(b){b.classList.toggle("on",state[b.dataset.k]===b.dataset.v);});}
+function match(s){
+ var g=GROUPS[s[1]];
+ if(state.lane!=="all" && String(g.lane)!==state.lane) return false;
+ if(state.group!=="all" && s[1]!==state.group) return false;
+ if(state.risk!=="all" && s[4]!==state.risk) return false;
+ if(state.q && (s[0]+s[1]+s[2]+s[3]).toLowerCase().indexOf(state.q.toLowerCase())<0) return false;
+ return true;
+}
+function render(){
+ var grid=document.getElementById("grid");grid.innerHTML="";
+ var list=STAFF.filter(match);
+ document.getElementById("count").innerHTML="총 <b>"+list.length+"</b>명 표시";
+ if(!list.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1">조건에 맞는 스태프가 없어요.</div>';return;}
+ list.forEach(function(s){var g=GROUPS[s[1]];
+  var el=document.createElement("div");el.className="staff";el.style.setProperty("--c",g.c);el.style.setProperty("--cw",g.cw);
+  el.innerHTML='<div class="top"><span class="grp">'+s[1]+'</span><span class="rb '+s[4]+'">'+RISK[s[4]]+'</span></div>'+
+   '<h3>'+s[0]+'</h3><div class="portal">'+s[2]+'</div><div class="func">'+s[3]+'</div>';
+  grid.append(el);});
+}
+// URL 파라미터로 진입(index 카드 연결)
+(function(){var p=new URLSearchParams(location.search);if(p.get("lane"))state.lane=p.get("lane");if(p.get("g")&&GROUPS[p.get("g")])state.group=p.get("g");})();
+document.getElementById("search").addEventListener("input",function(e){state.q=e.target.value;render();});
+buildFilters();render();
+</script>
 </body>
 </html>
