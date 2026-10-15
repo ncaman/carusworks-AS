@@ -2,281 +2,167 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>카루스웍스 AS — 에이전틱 스태프</title>
-<meta name="description" content="카루스웍스 AS. 스태프 하나, 쿠폰 한 장. 공공 23, 콘텐츠 5. 판단은 고객의 언어 모델, 기능은 스태프.">
-<meta name="theme-color" content="#ffffff">
-<link rel="canonical" href="https://ncaman.github.io/carusworks-AS/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="카루스웍스 AS — 에이전틱 스태프">
-<meta property="og:description" content="모듈 하나, 쿠폰 한 장. 지주회사 카루스웍스와 카루스웍스 SMOS로 이어집니다.">
-<meta property="og:url" content="https://ncaman.github.io/carusworks-AS/">
-<meta property="og:image" content="https://ncaman.github.io/carusworks-AS/assets/hero.jpg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>carusworks AS — 에이전트 모듈 스토어</title>
+<meta name="description" content="쓰던 AI 에이전트에 MCP로 연결해 민원·지원사업·신고 준비·콘텐츠 발행을 모듈 단위로 맡깁니다. 모듈 28개, 1회 3,000원부터, 월 구독 없음.">
+<meta name="theme-color" content="#0d2a21">
+<link rel="icon" href="https://carusworks.com/assets/brand/mark-g.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:site_name" content="carusworks">
+<meta property="og:title" content="carusworks AS — 에이전트 모듈 스토어"><meta property="og:description" content="쓰던 AI 에이전트에 MCP로 연결해 민원·지원사업·신고 준비·콘텐츠 발행을 모듈 단위로 맡깁니다. 모듈 28개, 1회 3,000원부터, 월 구독 없음.">
+<meta property="og:image" content="https://carusworks.com/assets/brand/og-g2.jpg"><meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#fff;--bg2:#f6f7f9;--ink:#191f28;--dim:#4e5968;--muted:#8b95a1;--line:#e6e8ec;
-  --gold:#8a6a22;--head:66px;--max:1146px;
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,"Noto Sans KR",sans-serif;line-height:1.7;letter-spacing:-.01em;word-break:keep-all;overflow-wrap:break-word}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-img,video{max-width:100%;display:block}
-.wrap{width:min(var(--max),calc(100% - 40px));margin:0 auto}
-.topbar{position:fixed;top:0;left:0;right:0;z-index:40;height:var(--head);display:flex;align-items:center;background:rgba(255,255,255,.92);border-bottom:1px solid transparent}
-.topbar.solid,.topbar:has(#sitenav.open){background:#fff;border-bottom-color:var(--line)}
-.inner{width:min(var(--max),calc(100% - 32px));margin:0 auto;display:flex;align-items:center;gap:18px}
-.logo{font-family:"JetBrains Mono",monospace;font-weight:700;letter-spacing:.14em;color:var(--gold);font-size:13px}
-.logo small{margin-left:8px;color:var(--dim);letter-spacing:.16em;font-size:10px}
-#sitenav{margin-left:auto;display:flex;align-items:center;gap:16px;font-size:14px;font-weight:650}
-#sitenav a{color:var(--dim)}
-#sitenav a.here,#sitenav a:hover{color:var(--ink)}
-.pill{background:#191f28;color:#fff !important;border-radius:999px;padding:8px 16px;font-weight:750}
-.burger{display:none;margin-left:auto;width:42px;height:42px;border-radius:999px;border:1px solid var(--line);align-items:center;justify-content:center;flex-direction:column;gap:5px}
-.burger span{display:block;width:16px;height:1.5px;background:#191f28}
-.hero{padding:calc(var(--head) + 48px) 0 28px}
-.hero-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
-.eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;letter-spacing:0;color:var(--gold)}
-h1{font-size:clamp(32px,4.6vw,58px);line-height:1.12;font-weight:800;letter-spacing:-.04em;margin:12px 0 16px}
-.grad{font-family:"Playfair Display",serif;font-style:italic;font-weight:500}
-.lead{color:var(--dim);font-size:clamp(15.5px,1.4vw,18px);max-width:38rem}
-.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.btn{display:inline-flex;align-items:center;border-radius:999px;padding:12px 18px;font-weight:750}
-.btn.p{background:#191f28;color:#fff}
-.btn.s{background:#fff;border:1px solid var(--line);color:var(--ink)}
-.note{margin-top:16px;color:var(--muted);font-size:13px}
-.hero-still{border-radius:28px;overflow:hidden;border:1px solid var(--line);background:#f4f5f7}
-.hero-still video,.hero-still img{width:100%;aspect-ratio:16/10;object-fit:cover}
-.stats{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stats .grid{display:grid;grid-template-columns:repeat(5,1fr);padding:28px 0;text-align:center}
-.stat .n{font-weight:800;font-size:clamp(22px,3vw,32px);letter-spacing:-.03em}
-.stat .l{color:var(--dim);font-size:13px;margin-top:4px}
-.sec{padding:84px 0}
-.sec h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;letter-spacing:-.035em;margin:10px 0 12px}
-.sub{color:var(--dim);max-width:40rem;margin-bottom:28px}
-.g4,.g3,.doors{display:grid;gap:14px}
-.g4{grid-template-columns:repeat(4,1fr)}
-.g3,.doors{grid-template-columns:repeat(3,1fr)}
-.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;min-height:100%}
-.card .k{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--gold)}
-.card h3{font-size:18px;margin:8px 0}
-.card p{color:var(--dim);font-size:14.5px}
-.card .more{display:inline-flex;margin-top:12px;font-weight:750;border-bottom:1px solid rgba(25,31,40,.28);padding-bottom:2px}
-.band{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.price{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.tier{border:1px solid var(--line);border-radius:22px;padding:24px;text-align:center;background:#fff}
-.tier.on{border-color:#191f28}
-.tier .t{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--gold);font-weight:700}
-.tier .pr{font-size:28px;font-weight:800;margin:8px 0;letter-spacing:-.03em}
-.tier p{color:var(--dim);font-size:14px}
-.notice{margin-top:22px;border:1px solid var(--line);border-radius:18px;padding:18px 20px;color:var(--dim);background:#fff}
-.notice b{color:var(--ink)}
-.door.here{background:var(--bg2)}
-footer{padding:36px 0 48px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
-.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:end}
-.foot a{margin-right:14px}
-.brand{font-family:"JetBrains Mono",monospace;color:var(--gold);letter-spacing:.14em;font-weight:700}
-@media(max-width:1023px){
-  .burger{display:flex}
-  #sitenav{display:none;position:absolute;top:var(--head);left:0;right:0;margin:0;flex-direction:column;align-items:stretch;gap:4px;background:#fff;border-bottom:1px solid var(--line);padding:12px 16px 18px;box-shadow:0 28px 48px rgba(25,31,40,.06)}
-  #sitenav.open{display:flex;min-height:calc(100dvh - var(--head));overflow:auto}
-  #sitenav a{padding:12px 8px;font-size:16px}
-  .pill{text-align:center}
-}
-@media(max-width:860px){
-  .hero-layout,.g4,.g3,.doors,.price,.stats .grid{grid-template-columns:1fr 1fr}
-  .g3,.doors,.price{grid-template-columns:1fr}
-  .hero-layout{grid-template-columns:1fr}
-  .sec{padding:64px 0}
-}
-@media(max-width:420px){
-  h1{font-size:28px;letter-spacing:-.045em}
-  .stats .grid{grid-template-columns:1fr 1fr}
-}
-
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://carusworks.com/assets/cw.css?v=25">
+<link rel="stylesheet" href="assets/p.css?v=1">
 </head>
-<body>
-<header class="topbar" id="topbar">
-  <div class="inner">
-    <a class="logo" href="https://carusworks.com/">carusworks <small>AS</small></a>
-    <nav id="sitenav">
-      <a href="https://carusworks.com/">지주</a>
-      <a class="here" href="index.html">AS</a>
-      <a href="https://ncaman.github.io/carusworks-SMOS/">SMOS</a>
-      <a href="#how">이용</a>
-      <a href="#catalog">카탈로그</a>
-      <a href="#price">요금</a>
-      <a class="pill" href="store.html">스태프 스토어</a>
+<body class="prod-as">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="./" aria-label="carusworks AS 홈"><img src="https://carusworks.com/assets/brand/logo-g.png" alt="carusworks" width="750" height="323"><span class="ptag">AS</span></a>
+    <button class="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="주 메뉴">
+      <a href="#try">모듈 실행기</a><a href="store.html">카탈로그</a><a href="#lineup-a">라인업</a>
+      <a class="cta" href="https://carusworks.com/contact/">도입 상담</a>
     </nav>
-    <button class="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="sitenav"><span></span><span></span><span></span></button>
   </div>
 </header>
-
-<section class="hero">
-  <div class="wrap hero-layout">
+<main id="main">
+<section class="hero dark phero">
+  <div class="wrap">
     <div>
-      <span class="eyebrow">카루스웍스 AS</span>
-      <h1>스태프 하나,<br><em class="grad">쿠폰 한 장.</em></h1>
-      <p class="lead">공공 23, 콘텐츠 5. 모듈 하나에 쿠폰 한 장입니다. 판단과 내용은 고객의 언어 모델이 하고, 작성·첨부·등록 준비는 스태프가 합니다.</p>
-      <div class="btns">
-        <a class="btn p" href="store.html">스태프 스토어</a>
-        <a class="btn s" href="#how">이용 방법</a>
+      <p class="cat">carusworks AS · 에이전트 모듈 스토어</p>
+      <h1>필요한 기능만,<br>모듈로 꺼내 씁니다.</h1>
+      <p class="lede">쓰던 AI 에이전트에 MCP로 연결해,<br>민원·지원사업·신고 준비·콘텐츠 발행을<br>모듈 단위로 맡기고 <strong>1회 단위로</strong> 씁니다.</p>
+      <div class="btns"><a class="btn p" href="#try">모듈 돌려 보기</a><a class="btn s" href="store.html">카탈로그 28개</a></div>
+    </div>
+    <figure class="demo runner" id="try" aria-label="모듈 실행 예시">
+      <div class="bar"><i></i><i></i><i></i><span>AS 모듈 실행기 · 예시</span></div>
+      <div class="dtabs" role="tablist" aria-label="모듈 선택"><button type="button" data-m="0">정부지원사업</button><button type="button" data-m="1">민원서류</button><button type="button" data-m="2">전자소송</button><button type="button" data-m="3">영상·유튜브</button></div>
+      <div class="say"><small>지시</small><span id="rSay"></span></div>
+      <ol id="rSteps"></ol>
+      <div class="rfoot"><span id="rRisk"></span><button type="button" id="rBtn">실행</button></div>
+      <p class="note" id="rNote">예시 화면 · 판단과 최종 제출은 고객이 합니다.</p>
+    </figure>
+  </div>
+</section>
+
+<section class="facts" aria-label="AS 기본 사양">
+  <div class="wrap">
+    <div><p>모듈</p><strong>28개 · 공공 23 · 콘텐츠 5</strong></div>
+    <div><p>연결</p><strong>MCP · 쓰던 AI 에이전트에 붙임</strong></div>
+    <div><p>AI 모델</p><strong>고객의 모델 (BYO)</strong></div>
+    <div><p>이용</p><strong>1회 3,000원부터 · 월 구독 없음</strong></div>
+  </div>
+</section>
+
+<section class="sec core" id="core">
+  <div class="wrap">
+    <div class="head2"><div><p class="label">Same principles</p><h2>carusworks의 세 가지를<br>모듈 하나에.</h2></div><p>필요한 일을 고르고 숫자를 넣어 보세요. 아낀 시간이 돈으로 계산됩니다.</p></div>
+    <div class="pwrap">
+      <div class="ptabs" role="tablist">
+        <button type="button" role="tab" data-p="1" aria-selected="true"><b>01</b><strong>말로 지시</strong><span>쓰던 AI 에이전트에 한 문장으로 맡깁니다. 앱을 새로 깔지 않습니다.</span></button>
+        <button type="button" role="tab" data-p="2" aria-selected="false"><b>02</b><strong>모듈 = 표준 절차</strong><span>모듈마다 절차가 고정돼 있고, 위험 등급과 실행 이력이 남습니다.</span></button>
+        <button type="button" role="tab" data-p="3" aria-selected="false"><b>03</b><strong>아낀 시간 = 돈</strong><span>모듈 비용과 아낀 시간을 같은 단위(원)로 비교합니다.</span></button>
       </div>
-      <p class="note">PC · MCP · 주니어 3,000원~ · 시니어 5,000원~ · 전문가 주문형</p>
+      <div class="ppanes">
+        <figure class="c3v chat pp on" data-p="1"><p class="me">이번 달 신청할 수 있는 정부지원사업 찾아서 마감 순으로 정리해 줘</p><p class="ai"><small>AS · 정부지원사업 모듈</small>조건에 맞는 공고 6건 · 마감 7일 이내 2건<br>신청서 기입 준비까지 할까요?<span class="bt"><button type="button">준비</button><button type="button">보류</button></span></p><p class="me">준비</p><p class="ai ok"><small>AS</small>✓ 기입 준비 완료 · 제출은 고객 인증으로 진행하세요</p><figcaption>예시 화면</figcaption></figure>
+        <figure class="c3v fab pp" data-p="2"><table><thead><tr><th scope="col">반도체 팹</th><th scope="col">AS 모듈</th></tr></thead><tbody>
+          <tr><td>레시피</td><td>모듈별 고정 절차 — 조회 → 기입 준비 → 고객 확인</td></tr>
+          <tr><td>공정 등급</td><td>위험 등급 — 일반 / 확인 필요 / 전문가 검토</td></tr>
+          <tr><td>품질 게이트</td><td>제출 직전 고객 확인, 고위험은 전문가 검토</td></tr>
+          <tr><td>로트 추적</td><td>모듈 실행 이력 — 언제, 무엇을, 어디까지</td></tr>
+          <tr><td>표준원가</td><td>등급별 1회 가격 — 3,000원 / 5,000원 / 주문형</td></tr>
+        </tbody></table></figure>
+        <figure class="c3v rep pp" data-p="3" id="asCalc"></figure>
+      </div>
     </div>
-    <figure class="hero-still">
-      <video autoplay muted loop playsinline poster="assets/hero.jpg">
-        <source src="assets/hero-loop.mp4" type="video/mp4">
-      </video>
-    </figure>
+    <p class="appnote">계산식 · 월 절감 = 월 처리 건수 × 건당 직접 처리 시간 × 시간당 가치 − 월 처리 건수 × 1회 이용료. 입력값은 예시이며 업무마다 다릅니다.</p>
   </div>
 </section>
 
-<section class="stats">
-  <div class="wrap grid">
-    <div class="stat"><div class="n">28</div><div class="l">스태프 모듈</div></div>
-    <div class="stat"><div class="n">23</div><div class="l">공공 레인</div></div>
-    <div class="stat"><div class="n">5</div><div class="l">콘텐츠 레인</div></div>
-    <div class="stat"><div class="n">3</div><div class="l">등급</div></div>
-    <div class="stat"><div class="n">BYO</div><div class="l">고객의 언어 모델</div></div>
-  </div>
-</section>
-
-<section class="sec" id="how">
+<section class="sec alt" id="catalog">
   <div class="wrap">
-    <span class="eyebrow">How</span>
-    <h2>네 걸음이면 연결됩니다.</h2>
-    <p class="sub">앱을 새로 깔지 않습니다. PC에서 쓰던 에이전트에 커넥터를 붙입니다.</p>
-    <div class="g4">
-      <article class="card"><div class="k">01</div><h3>MCP 연결</h3><p>에이전트에 스토어 주소와 키를 넣습니다.</p></article>
-      <article class="card"><div class="k">02</div><h3>모듈 선택</h3><p>레인과 등급으로 필요한 스태프만 고릅니다.</p></article>
-      <article class="card"><div class="k">03</div><h3>지시</h3><p>판단은 고객의 언어 모델이 하고, 스태프는 기능을 수행합니다.</p></article>
-      <article class="card"><div class="k">04</div><h3>쿠폰</h3><p>한 번은 한 장. 주니어 3,000원부터, 시니어 5,000원부터, 전문가는 주문형입니다.</p></article>
+    <div class="head2"><div><p class="label">Catalog</p><h2>28개 모듈,<br>분야별로 접어 두었습니다.</h2></div><p>필터로 찾으려면 <a class="more" href="store.html">전체 카탈로그</a>로 가세요.</p></div>
+    <div class="rv">
+      <details><summary><span class="n">01</span><h3>법무·사법</h3><span class="s">5개 모듈</span></summary><div class="rb"><ul class="mods"><li><b>전자소송</b><span>소장·준비서면·보정서 기입·첨부·제출 준비, 진행 조회</span><em class="r-high">전문가 검토</em></li><li><b>등기</b><span>부동산·법인 등기 신청 기입 보조, 등기부 발급</span><em class="r-high">전문가 검토</em></li><li><b>지급명령</b><span>소액채권 지급명령 신청 기입 보조</span><em class="r-mid">확인 필요</em></li><li><b>가족관계 신고</b><span>출생·혼인·사망 신고 기입 보조</span><em class="r-mid">확인 필요</em></li><li><b>전자공탁</b><span>공탁 신청 기입 보조</span><em class="r-mid">확인 필요</em></li></ul></div></details>
+      <details><summary><span class="n">02</span><h3>세무</h3><span class="s">3개 모듈</span></summary><div class="rb"><ul class="mods"><li><b>국세 신고</b><span>종합소득세·부가세·원천세 신고 기입, 계산서</span><em class="r-high">전문가 검토</em></li><li><b>지방세</b><span>취득세·재산세·자동차세 신고·납부</span><em class="r-mid">확인 필요</em></li><li><b>사업자등록</b><span>사업자등록·정정 신청 기입 보조</span><em class="r-mid">확인 필요</em></li></ul></div></details>
+      <details><summary><span class="n">03</span><h3>행정·민원</h3><span class="s">4개 모듈</span></summary><div class="rb"><ul class="mods"><li><b>민원서류</b><span>주민등록·가족관계 등 증명서 발급</span><em class="r-safe">일반</em></li><li><b>전입신고</b><span>전입신고·확정일자</span><em class="r-safe">일반</em></li><li><b>자동차 민원</b><span>등록·이전·말소 기입 보조</span><em class="r-mid">확인 필요</em></li><li><b>4대보험</b><span>국민연금·건강·고용·산재 취득·상실</span><em class="r-mid">확인 필요</em></li></ul></div></details>
+      <details><summary><span class="n">04</span><h3>복지</h3><span class="s">4개 모듈</span></summary><div class="rb"><ul class="mods"><li><b>복지급여</b><span>조건에 맞는 복지 조회와 신청 보조</span><em class="r-safe">일반</em></li><li><b>국민연금</b><span>수급·조회·환급 안내</span><em class="r-safe">일반</em></li><li><b>건강보험</b><span>자격·환급·건강검진 예약</span><em class="r-safe">일반</em></li><li><b>시니어 통합</b><span>어르신 대상 복지·연금·건강 종합 안내</span><em class="r-safe">일반</em></li></ul></div></details>
+      <details><summary><span class="n">05</span><h3>기업·조달</h3><span class="s">4개 모듈</span></summary><div class="rb"><ul class="mods"><li><b>조달</b><span>입찰·조달 등록, 공고 모니터링</span><em class="r-safe">일반</em></li><li><b>정부지원사업</b><span>지원사업 조회·신청 보조</span><em class="r-safe">일반</em></li><li><b>정책자금</b><span>소상공인 정책자금·지원금 신청 보조</span><em class="r-safe">일반</em></li><li><b>전자공시</b><span>전자공시 작성·제출 보조</span><em class="r-mid">확인 필요</em></li></ul></div></details>
+      <details><summary><span class="n">06</span><h3>지식재산</h3><span class="s">1개 모듈</span></summary><div class="rb"><ul class="mods"><li><b>상표·특허</b><span>출원 기입 보조, 선행조사 검색</span><em class="r-high">전문가 검토</em></li></ul></div></details>
+      <details><summary><span class="n">07</span><h3>민원 제기</h3><span class="s">2개 모듈</span></summary><div class="rb"><ul class="mods"><li><b>국민신문고</b><span>민원 제기·답변 추적</span><em class="r-safe">일반</em></li><li><b>정보공개 청구</b><span>정보공개 청구·수령</span><em class="r-safe">일반</em></li></ul></div></details>
+      <details><summary><span class="n">08</span><h3>콘텐츠</h3><span class="s">5개 모듈</span></summary><div class="rb"><ul class="mods"><li><b>영상·유튜브</b><span>영상 제작·썸네일·업로드</span><em class="r-safe">일반</em></li><li><b>출판·백서</b><span>지식을 책·백서·웹 문서로</span><em class="r-safe">일반</em></li><li><b>오디오·낭독</b><span>본인 목소리 오디오·낭독 영상</span><em class="r-safe">일반</em></li><li><b>SNS·마케팅</b><span>마케팅 콘텐츠 작성·여러 채널 발행</span><em class="r-mid">확인 필요</em></li><li><b>디자인·웹툰</b><span>썸네일·웹툰·이미지 제작</span><em class="r-safe">일반</em></li></ul></div></details>
     </div>
   </div>
 </section>
 
-<section class="sec band" id="axis">
+<section class="sec">
   <div class="wrap">
-    <span class="eyebrow">Axis</span>
-    <h2>레인, 등급, 대상.</h2>
-    <p class="sub">스태프는 사람 수가 아닙니다. 모듈 하나의 자리입니다.</p>
-    <div class="g3">
-      <article class="card"><div class="k">레인</div><h3>어떤 일</h3><p>레인 1은 공공·전문 23개. 행정, 법무, 세무, 복지. 레인 2는 콘텐츠 5개. 영상, 출판, 발행.</p></article>
-      <article class="card"><div class="k">등급</div><h3>어느 수준</h3><p>주니어는 단순한 일. 시니어는 복합 업무. 전문가는 고난도이고, 전자소송·등기·국세·상표·특허는 전문가 검토 뒤에 둡니다.</p></article>
-      <article class="card"><div class="k">대상</div><h3>누구에게</h3><p>소상공인, 전문직, 기업. 디바이스가 필요하면 카루스웍스 SMOS로 갑니다.</p></article>
+    <div class="head2"><div><p class="label">Before you start</p><h2>쓰기 전에<br>확인하실 것.</h2></div><p>필요한 항목만 펼쳐 보세요.</p></div>
+    <div class="rv">
+      <details><summary><span class="n">01</span><h3>이용 방법</h3><span class="s">네 걸음</span></summary><div class="rb"><div class="steps four">
+        <div><b>01</b><h3>MCP 연결</h3><p>쓰던 AI 에이전트에 스토어 주소와 키를 넣습니다.</p></div>
+        <div><b>02</b><h3>모듈 선택</h3><p>분야와 등급으로 필요한 모듈만 고릅니다.</p></div>
+        <div><b>03</b><h3>지시</h3><p>판단은 고객의 AI가 하고, 모듈은 기입·첨부·등록 준비를 합니다.</p></div>
+        <div><b>04</b><h3>1회 결제</h3><p>쓴 만큼만 냅니다. 등급이 곧 가격입니다.</p></div>
+      </div></div></details>
+      <details><summary><span class="n">02</span><h3>요금</h3><span class="s">등급이 곧 가격</span></summary><div class="rb"><div class="tiers">
+        <div><p class="dk">Junior</p><h3>3,000원~</h3><p>단순한 일 · 1회</p></div>
+        <div><p class="dk">Senior</p><h3>5,000원~</h3><p>여러 단계가 있는 일 · 1회</p></div>
+        <div><p class="dk">Expert</p><h3>주문형</h3><p>고난도 · 전문가 검토 포함</p></div>
+      </div><p class="pair"><b>월 구독은 없습니다.</b> 대신 모듈마다 가격과 범위를 미리 공개하고, 실행 이력을 남깁니다.</p></div></details>
+      <details><summary><span class="n">03</span><h3>책임 범위</h3><span class="s">자문이 아니라 기능</span></summary><div class="rb"><div class="tiers">
+        <div><p class="dk">Module</p><h3>기능</h3><p>서류 작성 보조, 첨부, 포털 조작, 등록 준비.</p></div>
+        <div><p class="dk">Customer</p><h3>판단</h3><p>무엇을 할지, 내용이 맞는지. AI 모델도 고객이 가져옵니다.</p></div>
+        <div><p class="dk">Submit</p><h3>본인 인증</h3><p>전자 등록과 최종 제출은 고객 인증으로 고객이 마칩니다.</p></div>
+      </div><p class="pair"><b>법률·세무 자문이 아닙니다.</b> 대신 전자소송·등기·국세·상표·특허 같은 고위험 업무는 전문가 검토를 거쳐 제공합니다.</p></div></details>
+      <details><summary><span class="n">04</span><h3>디바이스가 필요하다면</h3><span class="s">SMOS</span></summary><div class="rb"><p class="pair">PC 없이 태블릿 한 대로 시작하려면 <a class="more" href="https://ncaman.github.io/carusworks-SMOS/">carusworks SMOS</a>를 보세요. 다섯 모듈이 설치된 채로 도착합니다.</p></div></details>
     </div>
   </div>
 </section>
 
-<section class="sec" id="catalog">
+<section class="sec lineup" id="lineup-a">
   <div class="wrap">
-    <span class="eyebrow">Catalog</span>
-    <h2>스토어에서 고릅니다.</h2>
-    <p class="sub">각 카드는 모듈 묶음입니다. 전체 목록과 위험 등급은 스토어에 있습니다.</p>
-    <div class="g4">
-      <a class="card" href="store.html?g=복지·실버"><div class="k">복지</div><h3>복지·연금·건강</h3><p>조건에 맞는 조회와 신청 보조.</p><span class="more">스토어</span></a>
-      <a class="card" href="store.html?g=기업·조달(B2G)"><div class="k">지원</div><h3>정부지원·조달</h3><p>지원사업, 나라장터, 정책자금 신청 보조.</p><span class="more">스토어</span></a>
-      <a class="card" href="store.html?g=행정·민원"><div class="k">행정</div><h3>민원서류</h3><p>정부24 증명서, 전입, 자동차, 4대보험.</p><span class="more">스토어</span></a>
-      <a class="card" href="store.html?lane=1"><div class="k">법무·세무</div><h3>작성 준비</h3><p>전자소송, 등기, 세무. 제출 준비가 기능이고, 판단은 고객입니다.</p><span class="more">스토어</span></a>
-      <a class="card" href="store.html?lane=2"><div class="k">콘텐츠</div><h3>영상·발행</h3><p>영상, 출판, 마케팅 발행.</p><span class="more">스토어</span></a>
-      <a class="card" href="store.html"><div class="k">전체</div><h3>28개 모듈</h3><p>공공 23, 콘텐츠 5. 한 번에 봅니다.</p><span class="more">스토어</span></a>
+    <div class="head2"><div><p class="label">Lineup</p><h2>같은 엔진,<br>세 가지 방식.</h2></div><p>규모와 필요에 맞게 고르세요. 셋 다 같은 운영 원칙(말로 지시, 팹 방식 운영, 돈과 결정으로 보고)으로 움직입니다.</p></div>
+    <div class="lu">
+      <a href="https://carusworks.com/" class=""><p class="dk">Agentic SI</p><h3>carusworks</h3><p>기업·기관 업무 시스템부터 현장 설비까지 구축하고 운영까지 책임집니다.</p><span>구축·운영 보기</span></a>
+      <a href="https://ncaman.github.io/carusworks-AS/" class="on"><p class="dk">Agent modules</p><h3>carusworks AS</h3><p>쓰던 AI 에이전트에 필요한 기능만 모듈로 붙여 1회 단위로 씁니다.</p><span>지금 보는 곳</span></a>
+      <a href="https://ncaman.github.io/carusworks-SMOS/" class=""><p class="dk">Turnkey device</p><h3>carusworks SMOS</h3><p>다섯 모듈이 설치된 태블릿을 받아 켜고, 말로 가게를 운영합니다.</p><span>디바이스 보기</span></a>
     </div>
-    <figure class="hero-still" style="margin-top:22px">
-      <img src="assets/boards.jpg" alt="하얀 탁자 위에 쌓인 빈 보드">
-    </figure>
   </div>
 </section>
 
-<section class="sec band" id="trust">
+<section class="close">
   <div class="wrap">
-    <span class="eyebrow">Boundary</span>
-    <h2>자문이 아니라 기능입니다.</h2>
-    <p class="sub">기능 자동화 도구이며 법률·세무 자문이 아닙니다.</p>
-    <div class="g3">
-      <article class="card"><div class="k">스태프</div><h3>기능</h3><p>서류 작성 보조, 첨부, 포털 조작, 등록 준비.</p></article>
-      <article class="card"><div class="k">고객</div><h3>판단</h3><p>무엇을 할지, 내용이 맞는지. 언어 모델도 고객이 가져옵니다.</p></article>
-      <article class="card"><div class="k">제출</div><h3>본인 인증</h3><p>전자등록과 최종 제출은 고객의 인증으로 고객이 마칩니다.</p></article>
-    </div>
-    <div class="notice"><b>기능 자동화 도구이며 법률·세무 자문이 아닙니다.</b> 판단과 최종 제출은 고객에게 있습니다. 전자소송·등기·국세·상표·특허는 전문가 검토 뒤에 둡니다.</div>
+    <div><h2>필요한 모듈 하나부터 시작하세요.</h2><p>어떤 일을 맡길지 알려 주시면 맞는 모듈과 등급을 안내드립니다.</p></div>
+    <div class="btns"><a class="btn p" href="https://carusworks.com/contact/">도입 상담</a></div>
   </div>
 </section>
-
-<section class="sec" id="price">
+</main>
+<footer class="foot term">
   <div class="wrap">
-    <span class="eyebrow">Coupon</span>
-    <h2>쿠폰 한 장부터.</h2>
-    <p class="sub">등급이 곧 가격입니다. 월 구독이 아닙니다.</p>
-    <div class="price">
-      <article class="tier"><div class="t">주니어</div><div class="pr">3,000원~</div><p>단순한 일. 1회 쿠폰.</p></article>
-      <article class="tier on"><div class="t">시니어</div><div class="pr">5,000원~</div><p>복합 업무. 1회 쿠폰.</p></article>
-      <article class="tier"><div class="t">전문가</div><div class="pr">주문형</div><p>고난도. 검수가 필요한 일.</p></article>
+    <div class="tw">
+      <div class="tbar"><i></i><i></i><i></i><span>carusworks — zsh</span></div>
+      <div class="tbody">
+        <p class="pr"><b>~/carusworks</b> <em>$</em> tree -L 1</p>
+        <p class="root">carusworks/ <span># 같은 엔진, 세 가지 방식</span></p>
+        <details open><summary><span class="br">├──</span> lineup/</summary><ul><li><span class="br">│   ├──</span> <a href="https://carusworks.com/">carusworks</a> <span># AI 에이전틱 SI</span></li><li><span class="br">│   ├──</span> <a href="https://ncaman.github.io/carusworks-AS/">as</a> <span># 에이전트 모듈 스토어</span></li><li><span class="br">│   └──</span> <a href="https://ncaman.github.io/carusworks-SMOS/">smos</a> <span># 턴키 운영 디바이스</span></li></ul></details>
+        <details><summary><span class="br">├──</span> contact/</summary><ul>
+          <li><span class="br">│   ├──</span> <a href="https://carusworks.com/contact/">inquiry</a> <span># 도입 상담</span></li>
+          <li><span class="br">│   └──</span> <a href="mailto:contact@carusworks.com">contact@carusworks.com</a></li></ul></details>
+        <details><summary><span class="br">└──</span> legal/</summary><ul>
+          <li><span class="br">    ├──</span> <a href="https://carusworks.com/privacy/">privacy</a> <span># 개인정보처리방침</span></li>
+          <li><span class="br">    └──</span> <a href="https://carusworks.com/terms/">terms</a> <span># 이용약관</span></li></ul></details>
+        <p class="pr last"><b>~/carusworks/as</b> <em>$</em> <span class="cur" aria-hidden="true"></span></p>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="sec band" id="doors">
-  <div class="wrap">
-    <span class="eyebrow">Passage</span>
-    <h2>세 문은 한 집입니다.</h2>
-    <p class="sub">여기는 카루스웍스 AS입니다. 본사와 디바이스는 옆 문입니다.</p>
-    <div class="doors">
-      <a class="card" href="https://carusworks.com/"><div class="k">지주</div><h3>카루스웍스</h3><p>본사. 사례 진열은 대기이고, 브랜치는 여기로 돌아옵니다.</p><span class="more">본사로</span></a>
-      <article class="card door here"><div class="k">지금</div><h3>카루스웍스 AS</h3><p>스태프 스토어. 모듈 하나, 쿠폰 한 장.</p></article>
-      <a class="card" href="https://ncaman.github.io/carusworks-SMOS/"><div class="k">브랜치</div><h3>카루스웍스 SMOS</h3><p>태블릿 한 대. 다섯 모듈이 설치되어 도착합니다.</p><span class="more">디바이스로</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="contact">
-  <div class="wrap">
-    <span class="eyebrow">Contact</span>
-    <h2>범위는 메일 한 통으로.</h2>
-    <p class="sub">주소는 contact@carusworks.com 입니다. 스토어를 먼저 봐도 됩니다.</p>
-    <div class="btns">
-      <a class="btn p" href="mailto:contact@carusworks.com?subject=%EC%B9%B4%EB%A3%A8%EC%8A%A4%EC%9B%8D%EC%8A%A4%20AS%20%EB%AC%B8%EC%9D%98">도입 문의</a>
-      <a class="btn s" href="store.html">스태프 스토어</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap foot">
-    <div>
-      <div class="brand">carusworks AS</div>
-      <p>카루스웍스의 스태프 브랜치. 기능은 도구, 판단과 제출은 고객.</p>
-    </div>
-    <div>
-      <a href="https://carusworks.com/">지주</a>
-      <a href="https://ncaman.github.io/carusworks-SMOS/">SMOS</a>
-      <a href="store.html">스토어</a>
-      <a href="mailto:contact@carusworks.com">contact@carusworks.com</a>
-    </div>
+    <p class="copy">© 2026 carusworks · AS</p>
   </div>
 </footer>
-<script>
-(function(){
-  var bar=document.getElementById("topbar");
-  var onScroll=function(){bar.classList.toggle("solid",window.scrollY>8);};
-  onScroll();
-  window.addEventListener("scroll",onScroll,{passive:true});
-  var burger=document.querySelector(".burger");
-  var nav=document.getElementById("sitenav");
-  function closeNav(){nav.classList.remove("open");burger.setAttribute("aria-expanded","false");burger.setAttribute("aria-label","메뉴 열기");}
-  burger.addEventListener("click",function(){
-    var open=nav.classList.toggle("open");
-    burger.setAttribute("aria-expanded",open?"true":"false");
-    burger.setAttribute("aria-label",open?"메뉴 닫기":"메뉴 열기");
-  });
-  nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",closeNav);});
-  var vid=document.querySelector(".hero video");
-  if(vid && window.matchMedia("(prefers-reduced-motion: reduce)").matches){vid.removeAttribute("autoplay");vid.pause();}
-})();
-</script>
+<div class="stick" id="stick"><a class="btn p" href="https://carusworks.com/contact/">도입 상담</a><a class="btn s" href="#try">직접 해 보기</a></div>
+<script src="https://carusworks.com/assets/cw.js?v=25" defer></script>
+<script src="assets/p.js?v=1" defer></script>
 </body>
 </html>
